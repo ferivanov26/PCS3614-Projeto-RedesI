@@ -1,0 +1,16 @@
+{
+    "configurations": [
+        {
+            "name": "WSL Ubuntu",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/home/thefoxsaymeow/Redes/ns-3.46/build/include"
+            ],
+            "compilerPath": "/usr/bin/g++",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "linux-gcc-x64"
+        }
+    ],
+    "version": 4
+}

@@ -5,6 +5,7 @@
 #include "ns3/wifi-module.h"
 #include "ns3/mobility-module.h"
 #include "ns3/applications-module.h"
+#include "ns3/flow-monitor-module.h"
 
 using namespace ns3;
 
@@ -13,6 +14,9 @@ int main(int argc, char* argv[])
     uint32_t nClientes = 1;
     bool comMobilidade = false;
     std::string protocolo = "UDP";
+    double tempoSimulacao = 60.0;
+    double inicioAplicacoes = 2.0;
+    double fimAplicacoes = 55.0;
 
     CommandLine cmd;
 
@@ -217,15 +221,15 @@ int main(int argc, char* argv[])
         ApplicationContainer aplicacaoServidor;
         aplicacaoServidor = servidorUdp.Install(servidores.Get(2));
         aplicacaoServidor.Start(Seconds(1.0));
-        aplicacaoServidor.Stop(Seconds(10.0));
+        aplicacaoServidor.Stop(Seconds(tempoSimulacao));
 
         // Configuração do cliente UDP
         UdpEchoClientHelper clienteUdp(
             interfacesCabeadas.GetAddress(2), porta
         );
 
-        clienteUdp.SetAttribute("MaxPackets", UintegerValue(1));
-        clienteUdp.SetAttribute("Interval", TimeValue(Seconds(1.0)));
+        clienteUdp.SetAttribute("MaxPackets", UintegerValue(100000));
+        clienteUdp.SetAttribute("Interval", TimeValue(Seconds(0.016)));
         clienteUdp.SetAttribute("PacketSize", UintegerValue(1024));
 
         ApplicationContainer aplicacoesClientes;
@@ -237,8 +241,8 @@ int main(int argc, char* argv[])
             aplicacoesClientes.Add(aplicacao);
         }
 
-        aplicacoesClientes.Start(Seconds(2.0));
-        aplicacoesClientes.Stop(Seconds(10.0));
+        aplicacoesClientes.Start(Seconds(inicioAplicacoes));
+        aplicacoesClientes.Stop(Seconds(fimAplicacoes));
     }
 
     else if (protocolo == "TCP"){
@@ -302,8 +306,8 @@ int main(int argc, char* argv[])
             aplicacoesClientesTcp.Add(aplicacao);
         }
 
-        aplicacoesClientesTcp.Start(Seconds(2.0));
-        aplicacoesClientesTcp.Stop(Seconds(9.0));
+        aplicacoesClientesTcp.Start(Seconds(inicioAplicacoes));
+        aplicacoesClientesTcp.Stop(Seconds(fimAplicacoes));
 
         receptorTcp = DynamicCast<PacketSink>(aplicacaoServidorTcp.Get(0));
     }
@@ -326,15 +330,15 @@ int main(int argc, char* argv[])
             servidorUdpMisto.Install(servidores.Get(2));
 
         aplicacaoServidorUdpMisto.Start(Seconds(1.0));
-        aplicacaoServidorUdpMisto.Stop(Seconds(10.0));
+        aplicacaoServidorUdpMisto.Stop(Seconds(tempoSimulacao));
 
         // Configuração dos clientes UDP
         UdpEchoClientHelper clienteUdpMisto(
             interfacesCabeadas.GetAddress(2), portaUdp
         );
 
-        clienteUdpMisto.SetAttribute("MaxPackets", UintegerValue(1));
-        clienteUdpMisto.SetAttribute("Interval", TimeValue(Seconds(1.0)));
+        clienteUdpMisto.SetAttribute("MaxPackets", UintegerValue(100000));
+        clienteUdpMisto.SetAttribute("Interval", TimeValue(Seconds(0.016)));
         clienteUdpMisto.SetAttribute("PacketSize", UintegerValue(1024));
 
         // Instalação das aplicações UDP
@@ -348,8 +352,8 @@ int main(int argc, char* argv[])
             aplicacoesUdpMisto.Add(aplicacao);
         }
 
-        aplicacoesUdpMisto.Start(Seconds(2.0));
-        aplicacoesUdpMisto.Stop(Seconds(9.0));
+        aplicacoesUdpMisto.Start(Seconds(inicioAplicacoes));
+        aplicacoesUdpMisto.Stop(Seconds(fimAplicacoes));
 
         uint16_t portaTcpMisto = 5000;
 
@@ -410,14 +414,14 @@ int main(int argc, char* argv[])
             aplicacoesTcpMisto.Add(aplicacao);
         }
 
-        aplicacoesTcpMisto.Start(Seconds(2.0));
-        aplicacoesTcpMisto.Stop(Seconds(9.0));
+        aplicacoesTcpMisto.Start(Seconds(inicioAplicacoes));
+        aplicacoesTcpMisto.Stop(Seconds(fimAplicacoes));
     }
 
     
 
-    LogComponentEnable("UdpEchoClientApplication", LOG_LEVEL_INFO);
-    LogComponentEnable("UdpEchoServerApplication", LOG_LEVEL_INFO);
+    // LogComponentEnable("UdpEchoClientApplication", LOG_LEVEL_INFO);
+    // LogComponentEnable("UdpEchoServerApplication", LOG_LEVEL_INFO);
 
     std::cout << "\nQuantidade de clientes criados: "
           << clientes.GetN() << std::endl;
@@ -441,8 +445,105 @@ int main(int argc, char* argv[])
     std::cout << "\nProtocolo selecionado: "
           << protocolo << std::endl;
 
-    Simulator::Stop(Seconds(10.0));
+
+    FlowMonitorHelper flowHelper;
+    Ptr<FlowMonitor> monitor = flowHelper.InstallAll();
+    Simulator::Stop(Seconds(tempoSimulacao));    
     Simulator::Run();
+    monitor->CheckForLostPackets();
+
+    auto estatisticas = monitor->GetFlowStats();
+
+    std::cout << "\nQuantidade de fluxos identificados: "
+            << estatisticas.size() << std::endl;
+
+    
+    Ptr<Ipv4FlowClassifier> classificador =
+    DynamicCast<Ipv4FlowClassifier>(flowHelper.GetClassifier());
+
+    for (const auto& fluxo : estatisticas){
+
+        FlowId id = fluxo.first;
+
+        Ipv4FlowClassifier::FiveTuple tupla =
+            classificador->FindFlow(id);
+
+        
+        if (tupla.destinationAddress != interfacesCabeadas.GetAddress(2))
+        {
+            continue;
+        }
+
+        // Obter as estatísticas do fluxo
+        const auto& dados = fluxo.second;
+
+        std::cout << "\nEstatisticas do fluxo " << id << std::endl;
+
+        std::cout << "Pacotes enviados: "
+                << dados.txPackets << std::endl;
+
+        std::cout << "Pacotes recebidos: "
+                << dados.rxPackets << std::endl;
+
+        std::cout << "Bytes recebidos: "
+                << dados.rxBytes << std::endl;
+
+        std::cout << "Pacotes classificados como perdidos: "
+                << dados.lostPackets << std::endl;
+
+        double taxaPerda = 0.0;
+
+        if (dados.txPackets > 0){
+            taxaPerda =
+                100.0 * (dados.txPackets - dados.rxPackets) / dados.txPackets;
+        }
+
+        std::cout << "Taxa de perda observada: "
+                << taxaPerda << "%" << std::endl;
+
+        double duracao = fimAplicacoes - inicioAplicacoes;
+
+        double vazao = 0.0;
+
+        if (duracao > 0) {
+            vazao = (dados.rxBytes * 8.0) / (duracao * 1000.0);
+        }
+
+        // Calculo do atraso medio em milissegundos
+        double atrasoMedio = 0.0;
+
+        if (dados.rxPackets > 0){
+            atrasoMedio =
+                dados.delaySum.GetSeconds() * 1000.0 / dados.rxPackets;
+
+            std::cout << "Atraso medio: "
+                    << atrasoMedio << " ms" << std::endl;
+        }
+        else {
+            std::cout << "Atraso medio: N/A (nenhum pacote recebido)"
+                    << std::endl;
+        }
+
+        std::cout << "Vazao media: "
+                << vazao << " kbps" << std::endl;
+
+        std::cout << "\nFluxo " << id << std::endl;
+
+        std::cout << "Origem: "
+                << tupla.sourceAddress << std::endl;
+
+        std::cout << "Destino: "
+                << tupla.destinationAddress << std::endl;
+
+        std::cout << "Protocolo: "
+                << (tupla.protocol == 6 ? "TCP" :
+                    tupla.protocol == 17 ? "UDP" : "Outro")
+                << std::endl;
+    }
+
+    std::cout << "\nTempo simulado: "
+          << Simulator::Now().GetSeconds()
+          << " segundos" << std::endl;
     
     if (protocolo == "TCP" || protocolo == "MISTO"){
         std::cout << "\nTotal de bytes TCP recebidos em s2: "
