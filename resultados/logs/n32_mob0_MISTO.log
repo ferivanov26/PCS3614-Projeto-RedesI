@@ -1,0 +1,541 @@
+COMANDO: ./ns3 run scratch/equipe_7_3q2026 --nClientes=32 --comMobilidade=0 --protocolo=MISTO
+CODIGO_SAIDA: 0
+
+STDOUT:
+[0/2] Re-checking globbed directories...
+ninja: no work to do.
+
+Cenario misto selecionado!
+Clientes UDP: 16
+Clientes TCP: 16
+
+Quantidade de clientes criados: 32
+
+Posicoes dos clientes:
+Cliente c0: 20.6622:41.5038:0
+Cliente c1: 4.07487:29.5032:0
+Cliente c2: 26.0657:113.745:0
+Cliente c3: 93.6973:96.0385:0
+Cliente c4: 91.4084:103.743:0
+Cliente c5: 69.1012:24.1174:0
+Cliente c6: 118.55:59.8775:0
+Cliente c7: 102.337:87.0268:0
+Cliente c8: 125.787:54.1095:0
+Cliente c9: 132.104:18.0493:0
+Cliente c10: 57.2136:98.3632:0
+Cliente c11: 82.3119:64.1094:0
+Cliente c12: 28.2771:46.4739:0
+Cliente c13: 106.124:11.5583:0
+Cliente c14: 15.9399:13.7043:0
+Cliente c15: 4.97:115.592:0
+Cliente c16: 89.1896:126.354:0
+Cliente c17: 85.8842:91.7447:0
+Cliente c18: 81.25:100.229:0
+Cliente c19: 47.4344:40.0766:0
+Cliente c20: 123.37:59.0907:0
+Cliente c21: 34.075:113.704:0
+Cliente c22: 113.084:67.115:0
+Cliente c23: 46.9549:112.599:0
+Cliente c24: 30.5098:63.4906:0
+Cliente c25: 65.0222:128.08:0
+Cliente c26: 120.95:18.1736:0
+Cliente c27: 54.9374:131.1:0
+Cliente c28: 102.094:106.497:0
+Cliente c29: 57.0009:117.33:0
+Cliente c30: 130.395:40.0175:0
+Cliente c31: 55.7357:129.186:0
+
+Cenario de mobilidade: Estatico
+
+Protocolo selecionado: MISTO
+
+Quantidade de fluxos identificados: 48
+
+Estatisticas do fluxo 1
+Pacotes enviados: 6
+Pacotes recebidos: 0
+Bytes recebidos: 0
+Pacotes classificados como perdidos: 5
+Taxa de perda observada: 100%
+Atraso medio: N/A (nenhum pacote recebido)
+Vazao media: 0 kbps
+
+Fluxo 1
+Origem: 192.168.0.18
+Destino: 10.1.1.3
+Protocolo: TCP
+
+Estatisticas do fluxo 2
+Pacotes enviados: 4964
+Pacotes recebidos: 4717
+Bytes recebidos: 2771544
+Pacotes classificados como perdidos: 218
+Taxa de perda observada: 4.97583%
+Atraso medio: 35.6132 ms
+Vazao media: 418.346 kbps
+
+Fluxo 2
+Origem: 192.168.0.19
+Destino: 10.1.1.3
+Protocolo: TCP
+
+Estatisticas do fluxo 3
+Pacotes enviados: 3388
+Pacotes recebidos: 3105
+Bytes recebidos: 1823416
+Pacotes classificados como perdidos: 251
+Taxa de perda observada: 8.35301%
+Atraso medio: 22.0554 ms
+Vazao media: 275.233 kbps
+
+Fluxo 3
+Origem: 192.168.0.20
+Destino: 10.1.1.3
+Protocolo: TCP
+
+Estatisticas do fluxo 4
+Pacotes enviados: 27
+Pacotes recebidos: 8
+Bytes recebidos: 3492
+Pacotes classificados como perdidos: 19
+Taxa de perda observada: 70.3704%
+Atraso medio: 99.7356 ms
+Vazao media: 0.527094 kbps
+
+Fluxo 4
+Origem: 192.168.0.21
+Destino: 10.1.1.3
+Protocolo: TCP
+
+Estatisticas do fluxo 5
+Pacotes enviados: 6
+Pacotes recebidos: 0
+Bytes recebidos: 0
+Pacotes classificados como perdidos: 5
+Taxa de perda observada: 100%
+Atraso medio: N/A (nenhum pacote recebido)
+Vazao media: 0 kbps
+
+Fluxo 5
+Origem: 192.168.0.22
+Destino: 10.1.1.3
+Protocolo: TCP
+
+Estatisticas do fluxo 6
+Pacotes enviados: 6
+Pacotes recebidos: 0
+Bytes recebidos: 0
+Pacotes classificados como perdidos: 5
+Taxa de perda observada: 100%
+Atraso medio: N/A (nenhum pacote recebido)
+Vazao media: 0 kbps
+
+Fluxo 6
+Origem: 192.168.0.23
+Destino: 10.1.1.3
+Protocolo: TCP
+
+Estatisticas do fluxo 7
+Pacotes enviados: 851
+Pacotes recebidos: 743
+Bytes recebidos: 434928
+Pacotes classificados como perdidos: 107
+Taxa de perda observada: 12.691%
+Atraso medio: 19.3276 ms
+Vazao media: 65.6495 kbps
+
+Fluxo 7
+Origem: 192.168.0.24
+Destino: 10.1.1.3
+Protocolo: TCP
+
+Estatisticas do fluxo 8
+Pacotes enviados: 17
+Pacotes recebidos: 2
+Bytes recebidos: 108
+Pacotes classificados como perdidos: 15
+Taxa de perda observada: 88.2353%
+Atraso medio: 7.6345 ms
+Vazao media: 0.0163019 kbps
+
+Fluxo 8
+Origem: 192.168.0.25
+Destino: 10.1.1.3
+Protocolo: TCP
+
+Estatisticas do fluxo 9
+Pacotes enviados: 298
+Pacotes recebidos: 264
+Bytes recebidos: 152996
+Pacotes classificados como perdidos: 32
+Taxa de perda observada: 11.4094%
+Atraso medio: 5.73709 ms
+Vazao media: 23.0937 kbps
+
+Fluxo 9
+Origem: 192.168.0.26
+Destino: 10.1.1.3
+Protocolo: TCP
+
+Estatisticas do fluxo 10
+Pacotes enviados: 6
+Pacotes recebidos: 0
+Bytes recebidos: 0
+Pacotes classificados como perdidos: 5
+Taxa de perda observada: 100%
+Atraso medio: N/A (nenhum pacote recebido)
+Vazao media: 0 kbps
+
+Fluxo 10
+Origem: 192.168.0.27
+Destino: 10.1.1.3
+Protocolo: TCP
+
+Estatisticas do fluxo 11
+Pacotes enviados: 6
+Pacotes recebidos: 0
+Bytes recebidos: 0
+Pacotes classificados como perdidos: 5
+Taxa de perda observada: 100%
+Atraso medio: N/A (nenhum pacote recebido)
+Vazao media: 0 kbps
+
+Fluxo 11
+Origem: 192.168.0.28
+Destino: 10.1.1.3
+Protocolo: TCP
+
+Estatisticas do fluxo 12
+Pacotes enviados: 6
+Pacotes recebidos: 0
+Bytes recebidos: 0
+Pacotes classificados como perdidos: 5
+Taxa de perda observada: 100%
+Atraso medio: N/A (nenhum pacote recebido)
+Vazao media: 0 kbps
+
+Fluxo 12
+Origem: 192.168.0.29
+Destino: 10.1.1.3
+Protocolo: TCP
+
+Estatisticas do fluxo 13
+Pacotes enviados: 1256
+Pacotes recebidos: 1097
+Bytes recebidos: 643196
+Pacotes classificados como perdidos: 158
+Taxa de perda observada: 12.6592%
+Atraso medio: 36.6211 ms
+Vazao media: 97.0862 kbps
+
+Fluxo 13
+Origem: 192.168.0.30
+Destino: 10.1.1.3
+Protocolo: TCP
+
+Estatisticas do fluxo 14
+Pacotes enviados: 18
+Pacotes recebidos: 3
+Bytes recebidos: 648
+Pacotes classificados como perdidos: 15
+Taxa de perda observada: 83.3333%
+Atraso medio: 23.5037 ms
+Vazao media: 0.0978113 kbps
+
+Fluxo 14
+Origem: 192.168.0.31
+Destino: 10.1.1.3
+Protocolo: TCP
+
+Estatisticas do fluxo 15
+Pacotes enviados: 6
+Pacotes recebidos: 0
+Bytes recebidos: 0
+Pacotes classificados como perdidos: 5
+Taxa de perda observada: 100%
+Atraso medio: N/A (nenhum pacote recebido)
+Vazao media: 0 kbps
+
+Fluxo 15
+Origem: 192.168.0.32
+Destino: 10.1.1.3
+Protocolo: TCP
+
+Estatisticas do fluxo 16
+Pacotes enviados: 6
+Pacotes recebidos: 0
+Bytes recebidos: 0
+Pacotes classificados como perdidos: 5
+Taxa de perda observada: 100%
+Atraso medio: N/A (nenhum pacote recebido)
+Vazao media: 0 kbps
+
+Fluxo 16
+Origem: 192.168.0.33
+Destino: 10.1.1.3
+Protocolo: TCP
+
+Estatisticas do fluxo 17
+Pacotes enviados: 3313
+Pacotes recebidos: 0
+Bytes recebidos: 0
+Pacotes classificados como perdidos: 3001
+Taxa de perda observada: 100%
+Atraso medio: N/A (nenhum pacote recebido)
+Vazao media: 0 kbps
+
+Fluxo 17
+Origem: 192.168.0.2
+Destino: 10.1.1.3
+Protocolo: UDP
+
+Estatisticas do fluxo 18
+Pacotes enviados: 3313
+Pacotes recebidos: 0
+Bytes recebidos: 0
+Pacotes classificados como perdidos: 3001
+Taxa de perda observada: 100%
+Atraso medio: N/A (nenhum pacote recebido)
+Vazao media: 0 kbps
+
+Fluxo 18
+Origem: 192.168.0.3
+Destino: 10.1.1.3
+Protocolo: UDP
+
+Estatisticas do fluxo 19
+Pacotes enviados: 3313
+Pacotes recebidos: 0
+Bytes recebidos: 0
+Pacotes classificados como perdidos: 3001
+Taxa de perda observada: 100%
+Atraso medio: N/A (nenhum pacote recebido)
+Vazao media: 0 kbps
+
+Fluxo 19
+Origem: 192.168.0.4
+Destino: 10.1.1.3
+Protocolo: UDP
+
+Estatisticas do fluxo 20
+Pacotes enviados: 3313
+Pacotes recebidos: 2782
+Bytes recebidos: 2926664
+Pacotes classificados como perdidos: 481
+Taxa de perda observada: 16.0278%
+Atraso medio: 260.343 ms
+Vazao media: 441.761 kbps
+
+Fluxo 20
+Origem: 192.168.0.5
+Destino: 10.1.1.3
+Protocolo: UDP
+
+Estatisticas do fluxo 21
+Pacotes enviados: 3313
+Pacotes recebidos: 2054
+Bytes recebidos: 2160808
+Pacotes classificados como perdidos: 1148
+Taxa de perda observada: 38.0018%
+Atraso medio: 424.939 ms
+Vazao media: 326.16 kbps
+
+Fluxo 21
+Origem: 192.168.0.6
+Destino: 10.1.1.3
+Protocolo: UDP
+
+Estatisticas do fluxo 22
+Pacotes enviados: 3313
+Pacotes recebidos: 168
+Bytes recebidos: 176736
+Pacotes classificados como perdidos: 2856
+Taxa de perda observada: 94.9291%
+Atraso medio: 483.281 ms
+Vazao media: 26.6771 kbps
+
+Fluxo 22
+Origem: 192.168.0.7
+Destino: 10.1.1.3
+Protocolo: UDP
+
+Estatisticas do fluxo 23
+Pacotes enviados: 3313
+Pacotes recebidos: 267
+Bytes recebidos: 280884
+Pacotes classificados como perdidos: 2758
+Taxa de perda observada: 91.9408%
+Atraso medio: 472.41 ms
+Vazao media: 42.3976 kbps
+
+Fluxo 23
+Origem: 192.168.0.8
+Destino: 10.1.1.3
+Protocolo: UDP
+
+Estatisticas do fluxo 24
+Pacotes enviados: 3313
+Pacotes recebidos: 2652
+Bytes recebidos: 2789904
+Pacotes classificados como perdidos: 599
+Taxa de perda observada: 19.9517%
+Atraso medio: 287.994 ms
+Vazao media: 421.118 kbps
+
+Fluxo 24
+Origem: 192.168.0.9
+Destino: 10.1.1.3
+Protocolo: UDP
+
+Estatisticas do fluxo 25
+Pacotes enviados: 3313
+Pacotes recebidos: 0
+Bytes recebidos: 0
+Pacotes classificados como perdidos: 3001
+Taxa de perda observada: 100%
+Atraso medio: N/A (nenhum pacote recebido)
+Vazao media: 0 kbps
+
+Fluxo 25
+Origem: 192.168.0.10
+Destino: 10.1.1.3
+Protocolo: UDP
+
+Estatisticas do fluxo 26
+Pacotes enviados: 3313
+Pacotes recebidos: 0
+Bytes recebidos: 0
+Pacotes classificados como perdidos: 3001
+Taxa de perda observada: 100%
+Atraso medio: N/A (nenhum pacote recebido)
+Vazao media: 0 kbps
+
+Fluxo 26
+Origem: 192.168.0.11
+Destino: 10.1.1.3
+Protocolo: UDP
+
+Estatisticas do fluxo 27
+Pacotes enviados: 3313
+Pacotes recebidos: 2861
+Bytes recebidos: 3009772
+Pacotes classificados como perdidos: 410
+Taxa de perda observada: 13.6432%
+Atraso medio: 27.3363 ms
+Vazao media: 454.305 kbps
+
+Fluxo 27
+Origem: 192.168.0.12
+Destino: 10.1.1.3
+Protocolo: UDP
+
+Estatisticas do fluxo 28
+Pacotes enviados: 3313
+Pacotes recebidos: 3236
+Bytes recebidos: 3404272
+Pacotes classificados como perdidos: 69
+Taxa de perda observada: 2.32418%
+Atraso medio: 37.4649 ms
+Vazao media: 513.852 kbps
+
+Fluxo 28
+Origem: 192.168.0.13
+Destino: 10.1.1.3
+Protocolo: UDP
+
+Estatisticas do fluxo 29
+Pacotes enviados: 3313
+Pacotes recebidos: 125
+Bytes recebidos: 131500
+Pacotes classificados como perdidos: 2900
+Taxa de perda observada: 96.227%
+Atraso medio: 481.607 ms
+Vazao media: 19.8491 kbps
+
+Fluxo 29
+Origem: 192.168.0.14
+Destino: 10.1.1.3
+Protocolo: UDP
+
+Estatisticas do fluxo 30
+Pacotes enviados: 3313
+Pacotes recebidos: 0
+Bytes recebidos: 0
+Pacotes classificados como perdidos: 3001
+Taxa de perda observada: 100%
+Atraso medio: N/A (nenhum pacote recebido)
+Vazao media: 0 kbps
+
+Fluxo 30
+Origem: 192.168.0.15
+Destino: 10.1.1.3
+Protocolo: UDP
+
+Estatisticas do fluxo 31
+Pacotes enviados: 3313
+Pacotes recebidos: 0
+Bytes recebidos: 0
+Pacotes classificados como perdidos: 3001
+Taxa de perda observada: 100%
+Atraso medio: N/A (nenhum pacote recebido)
+Vazao media: 0 kbps
+
+Fluxo 31
+Origem: 192.168.0.16
+Destino: 10.1.1.3
+Protocolo: UDP
+
+Estatisticas do fluxo 32
+Pacotes enviados: 3313
+Pacotes recebidos: 0
+Bytes recebidos: 0
+Pacotes classificados como perdidos: 3001
+Taxa de perda observada: 100%
+Atraso medio: N/A (nenhum pacote recebido)
+Vazao media: 0 kbps
+
+Fluxo 32
+Origem: 192.168.0.17
+Destino: 10.1.1.3
+Protocolo: UDP
+
+Tempo simulado: 60 segundos
+
+Total de bytes TCP recebidos em s2: 5307224
+
+Posicoes finais dos clientes:
+Cliente c0: 20.6622:41.5038:0
+Cliente c1: 4.07487:29.5032:0
+Cliente c2: 26.0657:113.745:0
+Cliente c3: 93.6973:96.0385:0
+Cliente c4: 91.4084:103.743:0
+Cliente c5: 69.1012:24.1174:0
+Cliente c6: 118.55:59.8775:0
+Cliente c7: 102.337:87.0268:0
+Cliente c8: 125.787:54.1095:0
+Cliente c9: 132.104:18.0493:0
+Cliente c10: 57.2136:98.3632:0
+Cliente c11: 82.3119:64.1094:0
+Cliente c12: 28.2771:46.4739:0
+Cliente c13: 106.124:11.5583:0
+Cliente c14: 15.9399:13.7043:0
+Cliente c15: 4.97:115.592:0
+Cliente c16: 89.1896:126.354:0
+Cliente c17: 85.8842:91.7447:0
+Cliente c18: 81.25:100.229:0
+Cliente c19: 47.4344:40.0766:0
+Cliente c20: 123.37:59.0907:0
+Cliente c21: 34.075:113.704:0
+Cliente c22: 113.084:67.115:0
+Cliente c23: 46.9549:112.599:0
+Cliente c24: 30.5098:63.4906:0
+Cliente c25: 65.0222:128.08:0
+Cliente c26: 120.95:18.1736:0
+Cliente c27: 54.9374:131.1:0
+Cliente c28: 102.094:106.497:0
+Cliente c29: 57.0009:117.33:0
+Cliente c30: 130.395:40.0175:0
+Cliente c31: 55.7357:129.186:0
+
+
+STDERR:

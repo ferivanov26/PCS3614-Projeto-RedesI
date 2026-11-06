@@ -1,0 +1,87 @@
+COMANDO: ./ns3 run scratch/equipe_7_3q2026 --nClientes=4 --comMobilidade=1 --protocolo=UDP
+CODIGO_SAIDA: 0
+
+STDOUT:
+[0/2] Re-checking globbed directories...
+ninja: no work to do.
+
+Quantidade de clientes criados: 4
+
+Posicoes dos clientes:
+Cliente c0: 110.349:78.8388:0
+Cliente c1: 135.232:108.21:0
+Cliente c2: 5.09443:105.301:0
+Cliente c3: 1.65765:82.7121:0
+
+Cenario de mobilidade: Movel
+
+Protocolo selecionado: UDP
+
+Quantidade de fluxos identificados: 7
+
+Estatisticas do fluxo 1
+Pacotes enviados: 3313
+Pacotes recebidos: 2916
+Bytes recebidos: 3067632
+Pacotes classificados como perdidos: 391
+Taxa de perda observada: 11.9831%
+Atraso medio: 1.40541 ms
+Vazao media: 463.039 kbps
+
+Fluxo 1
+Origem: 192.168.0.2
+Destino: 10.1.1.3
+Protocolo: UDP
+
+Estatisticas do fluxo 2
+Pacotes enviados: 3313
+Pacotes recebidos: 379
+Bytes recebidos: 398708
+Pacotes classificados como perdidos: 2622
+Taxa de perda observada: 88.5602%
+Atraso medio: 4.34489 ms
+Vazao media: 60.1823 kbps
+
+Fluxo 2
+Origem: 192.168.0.3
+Destino: 10.1.1.3
+Protocolo: UDP
+
+Estatisticas do fluxo 3
+Pacotes enviados: 3313
+Pacotes recebidos: 0
+Bytes recebidos: 0
+Pacotes classificados como perdidos: 3001
+Taxa de perda observada: 100%
+Atraso medio: N/A (nenhum pacote recebido)
+Vazao media: 0 kbps
+
+Fluxo 3
+Origem: 192.168.0.4
+Destino: 10.1.1.3
+Protocolo: UDP
+
+Estatisticas do fluxo 4
+Pacotes enviados: 3313
+Pacotes recebidos: 749
+Bytes recebidos: 787948
+Pacotes classificados como perdidos: 2321
+Taxa de perda observada: 77.3921%
+Atraso medio: 5.11397 ms
+Vazao media: 118.936 kbps
+
+Fluxo 4
+Origem: 192.168.0.5
+Destino: 10.1.1.3
+Protocolo: UDP
+
+Tempo simulado: 60 segundos
+
+Posicoes finais dos clientes:
+Cliente c0: 109.619:75.5749:0
+Cliente c1: 120.409:58.6285:0
+Cliente c2: 9.19814:125.283:0
+Cliente c3: 14.9662:98.5711:0
+
+
+STDERR:

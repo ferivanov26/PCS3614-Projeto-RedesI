@@ -1,0 +1,58 @@
+COMANDO: ./ns3 run scratch/equipe_7_3q2026 --nClientes=2 --comMobilidade=0 --protocolo=TCP
+CODIGO_SAIDA: 0
+
+STDOUT:
+[0/2] Re-checking globbed directories...
+ninja: no work to do.
+Servidor TCP instalado em s2, porta 5000
+
+Quantidade de clientes criados: 2
+
+Posicoes dos clientes:
+Cliente c0: 54.5887:102.074:0
+Cliente c1: 114.782:65.9567:0
+
+Cenario de mobilidade: Estatico
+
+Protocolo selecionado: TCP
+
+Quantidade de fluxos identificados: 4
+
+Estatisticas do fluxo 1
+Pacotes enviados: 6626
+Pacotes recebidos: 6626
+Bytes recebidos: 3735020
+Pacotes classificados como perdidos: 0
+Taxa de perda observada: 0%
+Atraso medio: 0.456286 ms
+Vazao media: 563.777 kbps
+
+Fluxo 1
+Origem: 192.168.0.2
+Destino: 10.1.1.3
+Protocolo: TCP
+
+Estatisticas do fluxo 2
+Pacotes enviados: 6626
+Pacotes recebidos: 6626
+Bytes recebidos: 3735020
+Pacotes classificados como perdidos: 0
+Taxa de perda observada: 0%
+Atraso medio: 0.457121 ms
+Vazao media: 563.777 kbps
+
+Fluxo 2
+Origem: 192.168.0.3
+Destino: 10.1.1.3
+Protocolo: TCP
+
+Tempo simulado: 60 segundos
+
+Total de bytes TCP recebidos em s2: 6780928
+
+Posicoes finais dos clientes:
+Cliente c0: 54.5887:102.074:0
+Cliente c1: 114.782:65.9567:0
+
+
+STDERR:
